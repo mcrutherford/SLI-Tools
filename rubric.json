@@ -1,0 +1,64 @@
+{
+
+  "total": 100,
+
+  "due date": {
+    "time": "Sep 4, 2018 11:59 PM",
+    "penalty": 20
+  },
+
+  "requirements": {
+    "Problem Solving": {
+      "value": 15
+    },
+
+    "In-Lab": {
+      "value": 10
+    },
+
+    "Board Displayed": {
+      "value": 5
+    },
+
+    "Four Unique Shapes": {
+      "value": 15
+    },
+
+    "Shapes Distinctly Colored": {
+      "value": 10
+    },
+
+    "Board Configuration Valid": {
+      "value": 15
+    },
+
+    "Reused Square Function": {
+      "value": 10
+    },
+
+    "Reused Shape Functions": {
+      "value": 10
+    },
+
+    "Style": {
+      "value": 5,
+      "auto deductions": [
+        {
+          "penalty": 1,
+          "command": "('tetris.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'tetris.py'"
+        },
+        {
+          "penalty": 1,
+          "command": "(easy_access_vars['zipname'] == 'lab01')",
+          "desc": "zip file not named 'lab01.zip'"
+        }
+      ]
+    },
+
+    "Docstrings": {
+      "value": 5
+    }
+  }
+
+}
