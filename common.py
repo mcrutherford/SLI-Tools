@@ -34,7 +34,7 @@ def main():
 
     for filename in os.listdir(output_file_path):
         if filename.endswith(".zip"):
-            pattern = re.compile("\d*-\d*\s-\s(\w*),\s(\w*)\s-\s(.*)\.zip")
+            pattern = re.compile("\d*-\d*\s-\s([\w|\s]*),\s(\w*)\s-\s(.*)\.zip")
             matches = pattern.match(filename)
             if matches != None:
                 easy_access_vars = {}

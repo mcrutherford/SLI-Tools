@@ -8,6 +8,7 @@
 
 """
 import openpyxl # Not standard
+import openpyxl.utils
 
 import tkinter as tk
 from tkinter import filedialog
@@ -40,10 +41,10 @@ def create_individual_xl(rubric_data, location, easy_access_vars):
                 print(autodeduct['command'])
                 if not eval(autodeduct['command']):
                     deduct_sum += autodeduct['penalty']
-                    comment += str(autodeduct['penalty']) + 'p: ' + autodeduct['desc'] + '\n'
+                    comment += '-' + str(autodeduct['penalty']) + 'p: ' + autodeduct['desc'] + '\n'
             ws.cell(row, 3).value = deduct_sum
             ws.cell(row, 4).value = comment
-    ws.cell(row+2, 1).value = "Additional Comments"
+    ws.cell(row+1, 1).value = "Additional Comments"
 
     wb.save(location + '/Rubric.xlsx')
 
@@ -55,15 +56,48 @@ def main():
     if input_folder_path == '':
         return
 
-    rubrics = []
+    outputwb = openpyxl.Workbook()
+    outputws = outputwb['Sheet']
+
+    outputws.column_dimensions[openpyxl.utils.get_column_letter(1)].width = 30
+    outputws.column_dimensions[openpyxl.utils.get_column_letter(2)].width = 15
+    outputws.column_dimensions[openpyxl.utils.get_column_letter(3)].width = 60
+
+    rubrics = {}
     for filename in os.listdir(input_folder_path):  # loop through all the files and folders
         if os.path.isdir(
                 os.path.join(input_folder_path, filename)):  # check whether the current object is a folder or not
             if os.path.isfile(os.path.join(input_folder_path,filename, 'Rubric.xlsx')):
-                rubrics.append(os.path.join(input_folder_path,filename, 'Rubric.xlsx'))
+                rubrics[filename] = os.path.join(input_folder_path,filename, 'Rubric.xlsx')
 
-    for rubricpath in rubrics:
-        rubric = open(rubricpath)
+    for index, name in enumerate(rubrics.keys()):
+        rubricpath = rubrics[name]
+        rubricwb = openpyxl.load_workbook(rubricpath)
+        rubricws = rubricwb.worksheets[0]
+        split_name = name.split('_')
+        name = split_name[0] + ', ' + split_name[1]
+        comment_string = ''
+        total_points_achieved = 0
+        total_points_possible = 0
+        for row in range(2, rubricws.max_row+1):
+            points_deducted = int(rubricws.cell(row, 3).value) if rubricws.cell(row, 3).value != None else 0
+            points_possible = int(rubricws.cell(row, 2).value) if rubricws.cell(row, 2).value != None else 0
+            points_achieved = points_possible - points_deducted
+            total_points_achieved += points_achieved
+            comment_string += rubricws.cell(row, 1).value
+            if points_possible != 0:
+                comment_string += ' [' + str(points_achieved) + '/' + str(points_possible) + ']'
+            if rubricws.cell(row, 4).value != None:
+                comment = ':\n' + rubricws.cell(row, 4).value
+                comment.replace('\n', '\n\t')
+                comment_string += comment
+            elif row < rubricws.max_row+1:
+                comment_string += '\n'
+        outputws.cell(index+1, 1).value = name
+        outputws.cell(index+1, 2).value = total_points_achieved
+        outputws.cell(index+1, 3).value = comment_string
+
+    outputwb.save(os.path.join(input_folder_path, 'AllStudents.xlsx'))
 
 
 if __name__ == "__main__":
