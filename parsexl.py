@@ -21,7 +21,7 @@ def create_individual_xl(rubric_data, location, easy_access_vars):
     ws = wb['Sheet']
 
     # ws.set_column(0, 3, cell_format = wrap)
-    ws.column_dimensions[openpyxl.utils.get_column_letter(1)].width = 25
+    ws.column_dimensions[openpyxl.utils.get_column_letter(1)].width = 30
     ws.column_dimensions[openpyxl.utils.get_column_letter(2)].width = 14
     ws.column_dimensions[openpyxl.utils.get_column_letter(3)].width = 10
     ws.column_dimensions[openpyxl.utils.get_column_letter(4)].width = 70
@@ -41,7 +41,7 @@ def create_individual_xl(rubric_data, location, easy_access_vars):
                 print(autodeduct['command'])
                 if not eval(autodeduct['command']):
                     deduct_sum += autodeduct['penalty']
-                    comment += '-' + str(autodeduct['penalty']) + 'p: ' + autodeduct['desc'] + '\n'
+                    comment += ' -' + str(autodeduct['penalty']) + 'p: ' + autodeduct['desc'] + '\n'
             ws.cell(row, 3).value = deduct_sum
             ws.cell(row, 4).value = comment
     ws.cell(row+1, 1).value = "Additional Comments"
