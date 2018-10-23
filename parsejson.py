@@ -17,7 +17,7 @@ def parse_json(file_location):
     json_data = json.loads(file.read())
     file.close()
 
-    json_data['due date']['time'] = datetime.strptime(json_data['due date']['time'], '%b %d, %Y %I:%M %p')
+    #json_data['due date']['time'] = datetime.strptime(json_data['due date']['time'], '%b %d, %Y %I:%M %p')
 
     return json_data
 
