@@ -41,8 +41,8 @@ def main():
                 easy_access_vars['lastname'] = matches[1]
                 easy_access_vars['first'] = matches[2]
                 easy_access_vars['zipname'] = matches[3]
-                zip_ref = zipfile.ZipFile(output_file_path+"/"+filename, 'r')
                 print(output_file_path + "/" + easy_access_vars['lastname'] + "_" + easy_access_vars['first'])
+                zip_ref = zipfile.ZipFile(output_file_path+"/"+filename, 'r')
                 zip_ref.extractall(output_file_path + "/" + easy_access_vars['lastname'] + "_" + easy_access_vars['first'])
                 zip_ref.close()
 
@@ -51,8 +51,8 @@ def main():
                 easy_access_vars['filenames'] = []
                 easy_access_vars['filelocations'] = []
                 for fname in os.listdir(output_file_path + "/" + easy_access_vars['lastname'] + "_" + easy_access_vars['first']):
+                    easy_access_vars['filenames'].append(fname)
                     if fname.endswith('.py'):
-                        easy_access_vars['filenames'].append(fname)
                         easy_access_vars['filelocations'].append(output_file_path + \
                                                                  "/" + easy_access_vars['lastname'] + "_" + easy_access_vars['first'] + \
                                                                  "/" + fname)

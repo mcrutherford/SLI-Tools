@@ -1,0 +1,25 @@
+{
+
+  "requirements": {
+    "Produces expected picture": {
+      "value": 50
+    },
+
+    "Fits in canvas": {
+      "value": 10
+    },
+
+    "Recursion used": {
+      "value": 30
+    },
+
+    "Documentation": {
+      "value": 5
+    },
+
+    "Style": {
+      "value": 5
+    }
+  }
+
+}

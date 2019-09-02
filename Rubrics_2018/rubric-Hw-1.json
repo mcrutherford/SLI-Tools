@@ -1,0 +1,29 @@
+{
+
+  "requirements": {
+    "Completed prior experience survey": {
+      "value": 10
+    },
+
+    "Draws expected picture within window bounds": {
+      "value": 15
+    },
+
+    "Reuses a single triangle function": {
+      "value": 40
+    },
+
+    "Code uses multiple functions": {
+      "value": 25
+    },
+
+    "Documentation": {
+      "value": 5
+    },
+
+    "Style": {
+      "value": 5
+    }
+  }
+
+}

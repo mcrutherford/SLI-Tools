@@ -78,7 +78,6 @@ def main():
         name = split_name[0] + ', ' + split_name[1]
         comment_string = ''
         total_points_achieved = 0
-        total_points_possible = 0
         for row in range(2, rubricws.max_row+1):
             points_deducted = int(rubricws.cell(row, 3).value) if rubricws.cell(row, 3).value != None else 0
             points_possible = int(rubricws.cell(row, 2).value) if rubricws.cell(row, 2).value != None else 0

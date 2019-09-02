@@ -1,0 +1,59 @@
+{
+  "requirements": {
+    "Design - Modularity": {
+      "value": 5
+    },
+
+    "Design - Performance": {
+      "value": 10
+    },
+
+    "Error-checking of command line": {
+      "value": 5
+    },
+
+    "Reads an input file and outputs something without crashing": {
+      "value": 10
+    },
+
+    "Reads from standard input and outputs something without crashing": {
+      "value": 10
+    },
+
+    "Corrects spelling when an adjacent key was typed instead": {
+      "value": 8
+    },
+
+    "Corrects spelling when a letter is missing": {
+      "value": 8
+    },
+
+    "Corrects spelling when an extra key was typed.": {
+      "value": 8
+    },
+
+    "Handles punctuation cases successfully": {
+      "value": 6
+    },
+
+    "No properly spelled words are changed": {
+      "value": 15
+    },
+
+    "Output content and format for the words mode is correct": {
+      "value": 5
+    },
+
+    "Output content and format for the lines mode is correct": {
+      "value": 5
+    },
+
+    "Statistical output format is correct": {
+      "value": 5
+    },
+
+    "Deductions": {
+      "value": 0
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+
+  "requirements": {
+    "Problem Solving": {
+      "value": 15
+    },
+
+    "In-Lab": {
+      "value": 10
+    },
+
+    "store_location.py": {
+      "value": 25
+    },
+
+    "select_median.py": {
+      "value": 25
+    },
+
+    "Name in report.txt": {
+      "value": 1
+    },
+
+    "report.txt -> Q1": {
+      "value": 8
+    },
+
+    "report.txt -> Q2": {
+      "value": 8
+    },
+
+    "report.txt -> Q3": {
+      "value": 8
+    },
+
+    "Style/Documentation/Other deductions": {
+      "value": 0,
+      "auto deductions": [
+        {
+          "penalty": 1,
+          "command": "('store_location.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'store_location.py'"
+        },
+        {
+          "penalty": 1,
+          "command": "('select_median.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'select_median.py'"
+        },
+        {
+          "penalty": 1,
+          "command": "('report.txt' in easy_access_vars['filenames'])",
+          "desc": "text file not named 'report.txt'"
+        },
+        {
+          "penalty": 1,
+          "command": "(easy_access_vars['zipname'] == 'lab06')",
+          "desc": "zip file not named 'lab06.zip'"
+        }
+      ]
+    }
+  }
+
+}

@@ -1,0 +1,53 @@
+{
+
+  "requirements": {
+    "Problem Solving": {
+      "value": 15
+    },
+
+    "In-Lab": {
+      "value": 10
+    },
+
+    "Program uses dataclasses": {
+      "value": 15
+    },
+
+    "Correctly reads input files": {
+      "value": 10
+    },
+
+    "Correctly computs Strategy 1": {
+      "value": 15
+    },
+
+    "Correctly computs Strategy 2": {
+      "value": 15
+    },
+
+    "Correctly computs Strategy 3": {
+      "value": 15
+    },
+
+    "Generates appropriate output": {
+      "value": 5
+    },
+
+    "Style/Documentation/Other deductions": {
+      "value": 0,
+      "auto deductions": [
+        {
+          "penalty": 1,
+          "command": "('moving.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'moving.py'"
+        },
+        {
+          "penalty": 1,
+          "command": "(easy_access_vars['zipname'] == 'lab7')",
+          "desc": "zip file not named 'lab7.zip'"
+        }
+      ]
+    }
+  }
+
+}

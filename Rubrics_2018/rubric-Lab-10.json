@@ -1,0 +1,33 @@
+{
+
+  "requirements": {
+    "Problem Solving": {
+      "value": 15
+    },
+
+    "In-Lab": {
+      "value": 10
+    },
+
+    "Symbol table printout": {
+      "value": 20
+    },
+
+    "parse function": {
+      "value": 30
+    },
+
+    "infix function": {
+      "value": 15
+    },
+
+    "evaluate function": {
+      "value": 5
+    },
+
+    "Additional Deductions": {
+      "value": 0
+    }
+  }
+
+}
