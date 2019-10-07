@@ -1,0 +1,44 @@
+{
+  "requirements": {
+    "Outputs expected picture": {
+      "value": 15
+    },
+
+    "square() draws single colored square": {
+      "value": 15
+    },
+
+    "paint_line() iteratively draws a line of colored squares": {
+      "value": 30
+    },
+
+    "Drawing starts in upper left": {
+      "value": 5
+    },
+
+    "picture() opens and reads file in a loop": {
+      "value": 30
+    },
+
+    "main() calls picture() with user input": {
+      "value": 5
+    },
+
+    "Deductions": {
+      "value": 0,
+      "auto deductions": [
+        {
+          "penalty": 2,
+          "command": "('songs.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'songs.py'"
+        },
+        {
+          "penalty": 2,
+          "command": "(easy_access_vars['zipname'] == 'hw5')",
+          "desc": "zip file not named 'hw5.zip'"
+        }
+      ]
+    }
+  }
+
+}

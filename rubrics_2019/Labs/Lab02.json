@@ -1,0 +1,39 @@
+{
+  "requirements": {
+    "Problem solving": {
+      "value": 15
+    },
+
+    "Decides house type with conditionals": {
+      "value": 25
+    },
+
+    "Draws at least 2 houses and 1 tree": {
+      "value": 25
+    },
+
+    "Prints largest and smallest areas": {
+      "value": 10
+    },
+
+    "Fits within drawing window": {
+      "value": 5
+    },
+
+    "Fills shapes with colors": {
+      "value": 5
+    },
+
+    "Pauses for user to close": {
+      "value": 5
+    },
+
+    "Style": {
+      "value": 10
+    },
+
+    "Deductions": {
+      "value": 0
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "requirements": {
+    "Problem solving": {
+      "value": 15
+    },
+
+    "In-lab": {
+      "value": 10
+    },
+
+    "Functionality": {
+      "value": 50
+    },
+
+    "Design": {
+      "value": 15
+    },
+
+    "Testing": {
+      "value": 5
+    },
+
+    "Style": {
+      "value": 5
+    },
+
+    "Deductions": {
+      "value": 0
+    }
+  }
+}
