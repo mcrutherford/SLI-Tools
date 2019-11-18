@@ -1,0 +1,40 @@
+{
+  "requirements": {
+    "Produces correct output": {
+      "value": 15
+    },
+
+    "Random sequence/time comparison": {
+      "value": 15
+    },
+
+    "Phase 1 - Bumper sort": {
+      "value": 30
+    },
+
+    "Phase 2 - Bumper sort": {
+      "value": 35
+    },
+
+    "Style": {
+      "value": 5
+    },
+
+    "Deductions": {
+      "value": 0,
+      "auto deductions": [
+        {
+          "penalty": 2,
+          "command": "('bumper_sort.py' in easy_access_vars['filenames'])",
+          "desc": "python file not named 'bumper_sort.py'"
+        },
+        {
+          "penalty": 2,
+          "command": "(easy_access_vars['zipname'] == 'hw08')",
+          "desc": "zip file not named 'hw08.zip'"
+        }
+      ]
+    }
+  }
+
+}

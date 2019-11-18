@@ -1,0 +1,24 @@
+{
+  "requirements": {
+    "Problem solving": {
+      "value": 15
+    },
+
+    "In-Lab": {
+      "value": 10
+    },
+
+    "Basic functions": {
+      "value": 25
+    },
+
+    "Advanced functions": {
+      "value": 40
+    },
+
+    "Style": {
+      "value": 10
+    }
+  }
+
+}

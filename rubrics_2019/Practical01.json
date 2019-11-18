@@ -1,0 +1,37 @@
+{
+  "requirements": {
+
+    "Cross1": {
+      "value": 10
+    },
+
+    "Cross2": {
+      "value": 15
+    },
+
+    "Cross3": {
+      "value": 15
+    },
+
+    "Is recursive": {
+      "value": 10
+    },
+
+    "Draws to correct depth": {
+      "value": 10
+    },
+
+    "Correct drawing": {
+      "value": 20
+    },
+
+    "Comments/documentation": {
+      "value": 10
+    },
+
+    "main()": {
+      "value": 10
+    }
+  }
+
+}

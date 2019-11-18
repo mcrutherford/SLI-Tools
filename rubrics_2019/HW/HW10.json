@@ -1,0 +1,28 @@
+{
+  "requirements": {
+    "Performance": {
+      "value": 10
+    },
+
+    "Code structure": {
+      "value": 10
+    },
+
+    "insert()": {
+      "value": 20
+    },
+
+    "insort()": {
+      "value": 20
+    },
+
+    "pretty_print()": {
+      "value": 20
+    },
+
+    "read_file()": {
+      "value": 20
+    }
+  }
+
+}
