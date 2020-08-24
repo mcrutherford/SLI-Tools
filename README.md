@@ -2,13 +2,14 @@
 
 ### Python requirements
 
-These scripts have been validated for Python 3.8, though any Python 3.x version should work. They 
-rely on Tkinter, which should be included in your python install by default, unless you specifically 
-chose to not install it.
+These scripts have been validated for Python 3.8, though any Python 3.x version should work. They have been tested on 
+both Windows and Linux (Ubuntu).
 
 ### Dependencies
-openpyxl - This library is not default in a python installation, and can be added via pip with the command "pip 
+- openpyxl - This library is not default in a python installation, and can be added via pip with the command "pip 
 install openpyxl"
+- tkinter - This should be included in windows python installs. If running on linux, you may need to run "apt-get install 
+python3-tk"
 
 ### How to grade using SLI-Tools
 1. Create a grading rubric to be used and name it rubric.json in the same folder as 
