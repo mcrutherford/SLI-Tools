@@ -30,7 +30,7 @@
         },
         {
           "penalty": 2,
-          "command": "(easy_access_vars['zipname'] == 'hw08')",
+          "command": "(easy_access_vars['zipname'] == 'hw08.zip')",
           "desc": "zip file not named 'hw08.zip'"
         }
       ]
