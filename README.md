@@ -1,8 +1,14 @@
 # SLI-Tools
 
+### Python requirements
+
 These scripts have been validated for Python 3.8, though any Python 3.x version should work. They 
 rely on Tkinter, which should be included in your python install by default, unless you specifically 
 chose to not install it.
+
+### Dependencies
+openpyxl - This library is not default in a python installation, and can be added via pip with the command "pip 
+install openpyxl"
 
 ### How to grade using SLI-Tools
 1. Create a grading rubric to be used and name it rubric.json in the same folder as 
