@@ -101,7 +101,7 @@ def main():
             continue
         try:
             # Identify the student's name from the mycourses file naming scheme
-            pattern = re.compile("\d*-\d*\s-\s([\w|\s]*),\s(\w*)\s-\s(.*)\.zip")
+            pattern = re.compile("\d*-\d*\s-\s([\w\s-]*),\s(\w*)\s-\s(.*)\.zip")
             matches = pattern.match(filename)
             if not matches:
                 raise zipfile.BadZipFile
