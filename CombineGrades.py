@@ -6,8 +6,8 @@
 @description:
     Combine completed grading rubrics from all students into one master xlsx to add to mycourses.
 
-    Validated for Python 3.8, but should work for Python 3.x. Tkinter should come preinstalled with Python, unless you
-    decided to not install it during the python install.
+    Validated for Python 3.8, but should work for Python 3.x. Requires openpyxl, which can be installed with the command
+    'pip install openpyxl'
 
 """
 import openpyxl  # pip install openpyxl
@@ -46,22 +46,32 @@ def combine_rubrics(rubrics, outputws):
         rubricws = rubricwb.worksheets[0]
         split_name = name.split('_')
         name = split_name[0] + ', ' + split_name[1]
+
+        # Iterate over each row to calculate total score and comment for mycourses
         comment_string = ''
         total_points_achieved = 0
         for row in range(2, rubricws.max_row+1):
+            # Calculate points achieved
             points_deducted = int(rubricws.cell(row, 3).value) if rubricws.cell(row, 3).value else 0
             points_possible = int(rubricws.cell(row, 2).value) if rubricws.cell(row, 2).value else 0
             points_achieved = points_possible - points_deducted
             total_points_achieved += points_achieved
-            comment_string += rubricws.cell(row, 1).value
-            if points_possible != 0:
-                comment_string += ' [' + str(points_achieved) + '/' + str(points_possible) + ']'
+
+            # Add the comment to the full comment string
+            comment_string += rubricws.cell(row, 1).value  # the requirement
+            if row != rubricws.max_row:
+                comment_string += ' [' + str(points_achieved) + '/' + str(points_possible) + ']'  # points lost
             if rubricws.cell(row, 4).value:
-                comment = ':\n' + rubricws.cell(row, 4).value
-                comment.replace('\n', '\n\t')
+                comment = ':\n' + rubricws.cell(row, 4).value  # grader comment
+                if comment[-1] != '\n':
+                    comment += '\n'
+                # comment.replace('\n', '\n\t')  # Tab in the comment
                 comment_string += comment
             elif row < rubricws.max_row+1:
                 comment_string += '\n'
+        comment_string = comment_string.strip()
+
+        # add line to the output worksheet
         outputws.cell(index+1, 1).value = name
         outputws.cell(index+1, 2).value = total_points_achieved
         outputws.cell(index+1, 3).value = comment_string
@@ -72,7 +82,7 @@ def main():
     root.withdraw()
 
     # Prompt for the main folder containing student files
-    input_folder_path = filedialog.askdirectory()
+    input_folder_path = filedialog.askdirectory(title='Select folder containing student assignment folders')
     if input_folder_path == '':
         return
 

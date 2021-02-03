@@ -21,19 +21,7 @@
     },
 
     "Deductions": {
-      "value": 0,
-      "auto deductions": [
-        {
-          "penalty": 2,
-          "command": "('bumper_sort.py' in easy_access_vars['filenames'])",
-          "desc": "python file not named 'bumper_sort.py'"
-        },
-        {
-          "penalty": 2,
-          "command": "(easy_access_vars['zipname'] == 'hw08.zip')",
-          "desc": "zip file not named 'hw08.zip'"
-        }
-      ]
+      "value": 0
     }
   }
 

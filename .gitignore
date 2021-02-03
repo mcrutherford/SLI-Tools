@@ -1,5 +1,10 @@
+# Non-example rubrics
 /Rubrics/
 /rubric.json
+
+# Runtime files
 /__pycache__/
+
+# Pycharm
 /venv/
 /.idea/
