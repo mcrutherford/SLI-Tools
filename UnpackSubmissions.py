@@ -97,15 +97,16 @@ def main():
             continue
         try:
             # Identify the student's name from the mycourses file naming scheme
-            pattern = re.compile("\d*-\d*\s-\s(.*),\s(.*)\s-\s.*\.zip")
+            pattern = re.compile("\d*-\d*\s-\s(.*),\s(.*)\s-\s(.*)\.zip")
             matches = pattern.match(filename)
             if not matches:
                 raise zipfile.BadZipFile
             else:
                 # Extract the student's zip file
                 student_name = matches[1] + "_" + matches[2]
+                zip_name = matches[3]
                 zip_ref = zipfile.ZipFile(os.path.join(output_file_path, filename), 'r')
-                zip_ref.extractall(os.path.join(output_file_path, student_name))
+                zip_ref.extractall(os.path.join(output_file_path, student_name, zip_name))
                 zip_ref.close()
 
                 # Remove the student's extracted zip file
